@@ -71,7 +71,7 @@ public class Restaurant {
     /**
      * This method returns the order value, given the name of the items in <String> format
      *
-     * @return Double: totalOrderCost - total cost of order
+     * @return int: totalOrderCost - total cost of order
      */
     public int getOrderCost(List<String> selectedItems){
         int totalOrderCost = 0;
