@@ -67,6 +67,10 @@ public class Restaurant {
         menu.add(newItem);
     }
 
+    public Double getOrderCost(List<Item> selectedItems){
+        return null;
+    }
+
     public void removeFromMenu(String itemName) throws itemNotFoundException {
 
         Item itemToBeRemoved = findItemByName(itemName);

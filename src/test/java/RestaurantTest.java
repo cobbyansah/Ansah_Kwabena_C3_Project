@@ -5,7 +5,10 @@ import org.mockito.Mockito;
 import org.mockito.Spy;
 
 import java.time.LocalTime;
+import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RestaurantTest {
@@ -54,6 +57,16 @@ class RestaurantTest {
 
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    //------- Part 3: Failing test case -------
+    @Test
+    public void get_order_total_should_return_sum_of_prices_of_all_selected_items(){
+        List<Item> selectedItems = restaurant.getMenu();
+        Double orderCost = restaurant.getOrderCost(selectedItems);
+        assertNotNull(orderCost);
+        // assertThat(orderCost, greaterThanOrEqualTo(0.0));
+    }
+
     @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1(){
         int initialMenuSize = restaurant.getMenu().size();
