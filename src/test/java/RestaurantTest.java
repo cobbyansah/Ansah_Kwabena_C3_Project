@@ -5,6 +5,7 @@ import org.mockito.Mockito;
 import org.mockito.Spy;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -59,10 +60,23 @@ class RestaurantTest {
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     //------- Part 3: Failing test case -------
+    /**
+     * -> TODO
+     *
+     *  Method to return total order cost
+     *
+     *  Takes list of order names (String) as parameter
+     *  Find each corresponding order cost and add to sum
+     *  return double: sum - cost of all order items
+    */
+
     @Test
-    public void get_order_total_should_return_sum_of_prices_of_all_selected_items(){
-        List<Item> selectedItems = restaurant.getMenu();
-        Double orderCost = restaurant.getOrderCost(selectedItems);
+    public void get_order_cost_should_return_sum_of_prices_of_all_selected_items(){
+        List<String> order = new ArrayList<String>();
+        order.add("Sweet corn soup");
+        order.add("Vegetable lasagne");
+
+        Double orderCost = restaurant.getOrderCost(order);
         assertNotNull(orderCost);
         // assertThat(orderCost, greaterThanOrEqualTo(0.0));
     }

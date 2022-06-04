@@ -67,7 +67,8 @@ public class Restaurant {
         menu.add(newItem);
     }
 
-    public Double getOrderCost(List<Item> selectedItems){
+
+    public Double getOrderCost(List<String> selectedItems){
         return null;
     }
 
