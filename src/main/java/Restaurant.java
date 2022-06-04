@@ -68,8 +68,17 @@ public class Restaurant {
     }
 
 
-    public Double getOrderCost(List<String> selectedItems){
-        return null;
+    /**
+     * This method returns the order value, given the name of the items in <String> format
+     *
+     * @return Double: totalOrderCost - total cost of order
+     */
+    public int getOrderCost(List<String> selectedItems){
+        int totalOrderCost = 0;
+        for(String orderItem: selectedItems) {
+            totalOrderCost += findItemByName(orderItem).getPrice();
+        }
+        return totalOrderCost;
     }
 
     public void removeFromMenu(String itemName) throws itemNotFoundException {

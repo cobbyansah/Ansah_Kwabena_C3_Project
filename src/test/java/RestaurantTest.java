@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,7 +60,7 @@ class RestaurantTest {
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-    //------- Part 3: Failing test case -------
+    //------- Part 3: Solution -------
     /**
      * -> TODO
      *
@@ -76,9 +77,10 @@ class RestaurantTest {
         order.add("Sweet corn soup");
         order.add("Vegetable lasagne");
 
-        Double orderCost = restaurant.getOrderCost(order);
+        int orderCost = restaurant.getOrderCost(order);
         assertNotNull(orderCost);
-        // assertThat(orderCost, greaterThanOrEqualTo(0.0));
+        assertThat(orderCost, greaterThan(0));
+        assertEquals(388, orderCost);
     }
 
     @Test

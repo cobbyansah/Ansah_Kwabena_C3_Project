@@ -10,6 +10,16 @@ public class Item {
     public String getName() {
         return name;
     }
+
+    /**
+     * This method returns price of item
+     *
+     * @return int: price of item
+     */
+    public int getPrice() {
+        return price;
+    }
+
     @Override
     public String toString(){
         return  name + ":"
