@@ -73,7 +73,7 @@ class RestaurantTest {
 
     @Test
     public void get_order_cost_should_return_sum_of_prices_of_all_selected_items(){
-        List<String> order = new ArrayList<String>();
+        List<String> order = new ArrayList<>();
         order.add("Sweet corn soup");
         order.add("Vegetable lasagne");
 
